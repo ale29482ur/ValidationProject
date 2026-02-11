@@ -16,7 +16,6 @@ public class User {
     @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Setter
     @Getter
     private String name;
@@ -44,6 +43,4 @@ public class User {
         this.email = email;
         this.password = password;
     }
-
-
 }

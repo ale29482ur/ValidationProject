@@ -1,4 +1,4 @@
-package com.example.ValidationProject;
+package Process.example.ValidationProject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

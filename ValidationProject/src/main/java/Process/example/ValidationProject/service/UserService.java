@@ -1,7 +1,7 @@
-package com.example.ValidationProject.service;
+package Process.example.ValidationProject.service;
 
-import com.example.ValidationProject.model.User;
-import com.example.ValidationProject.repository.UserRepository;
+import Process.example.ValidationProject.model.User;
+import Process.example.ValidationProject.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,14 +26,6 @@ public class UserService {
     }
 
     public User save(User user) {
-
-        if (user.getName() == null || user.getName().isBlank()) {
-            throw new IllegalArgumentException("nome e obrigatorio");
-        }
-        if (user.getName().length() < 3){
-            throw new IllegalArgumentException("o nome deve ter 3 ou mais caracteres");
-        }
-
         return userRepository.save(user);
     }
 

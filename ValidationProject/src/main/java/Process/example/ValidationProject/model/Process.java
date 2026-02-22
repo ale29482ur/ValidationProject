@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "process")
@@ -19,6 +22,9 @@ public class Process {
 
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
+
+    @CreationTimestamp
+    private LocalDateTime startDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)

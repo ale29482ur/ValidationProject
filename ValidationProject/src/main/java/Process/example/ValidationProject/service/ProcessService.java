@@ -8,7 +8,7 @@ import Process.example.ValidationProject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.swing.*;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -57,5 +57,11 @@ public class ProcessService {
                 .orElseThrow(() -> new RuntimeException("process not found"));
 
         processRepository.deleteById(processId);
+    }
+
+    public Process ReadProcess(Long processId) {
+
+        return processRepository.findById(processId)
+                .orElseThrow(() -> new RuntimeException("process not found"));
     }
 }

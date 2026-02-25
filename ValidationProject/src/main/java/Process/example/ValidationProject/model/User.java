@@ -1,5 +1,6 @@
 package Process.example.ValidationProject.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
@@ -16,6 +17,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Getter
 @Setter
 @Entity
@@ -42,12 +44,14 @@ public class User {
 
     @Setter
     @Getter
+    @Column(unique = true, nullable = false)
     @NotBlank(message = "Email is required.")
     @Email(message = "Invalid email format.")
     private String email;
 
     @Setter
     @Getter
+    @Column(nullable = false)
     @NotBlank(message = "Password is required.")
     private String password;
 

@@ -2,9 +2,12 @@ package Process.example.ValidationProject.service;
 
 import Process.example.ValidationProject.model.User;
 import Process.example.ValidationProject.repository.UserRepository;
+import jakarta.validation.constraints.NotBlank;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -17,7 +20,6 @@ public class UserService {
     }
 
     public List<User> getAllUsers() {
-
         return userRepository.findAll();
     }
 
@@ -32,6 +34,5 @@ public class UserService {
     public void delete(Long id) {
         userRepository.deleteById(id);
     }
-
 
 }

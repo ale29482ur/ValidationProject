@@ -25,7 +25,7 @@ public class ProcessService {
         Process process = new Process();
 
         process.setDescricao(descricao);
-        process.setStatus(StatusPedido.AGUARDANDO_VALIDACAO);
+        process.setStatus(StatusPedido.EM_ANALISE_TECNICA);
         process.setUser(user);
 
         return processRepository.save(process);

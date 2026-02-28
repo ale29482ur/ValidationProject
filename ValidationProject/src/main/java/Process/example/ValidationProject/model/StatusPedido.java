@@ -2,9 +2,7 @@ package Process.example.ValidationProject.model;
 
 public enum StatusPedido {
 
-    AGUARDANDO_VALIDACAO,
     EM_ANALISE_TECNICA,
-    AGUARDANDO_APROVACAO,
     APROVADO,
     CANCELADO,
     EM_REPARO,
@@ -14,9 +12,7 @@ public enum StatusPedido {
 
     public StatusPedido proximoStatus() {
         return switch (this) {
-            case AGUARDANDO_VALIDACAO -> EM_ANALISE_TECNICA;
-            case EM_ANALISE_TECNICA -> AGUARDANDO_APROVACAO;
-            case AGUARDANDO_APROVACAO -> APROVADO; // botão avançar segue fluxo principal
+            case EM_ANALISE_TECNICA -> APROVADO;
             case APROVADO -> EM_REPARO;
             case EM_REPARO -> AGUARDANDO_PAGAMENTO;
             case AGUARDANDO_PAGAMENTO -> PAGO;
